@@ -14,13 +14,17 @@ while True:
             todo = input("Enter a todo: ")
             todos.append(todo)
         case "show":
-            for item in todos:
+            # the enumerate function gives us both the index and the item in the list
+            for index, item in enumerate(todos):
                 item = item.title()
-                print(item)
+                index = index + 1  # to start the index at 1 instead of 0
+                print(index, " ", item)
         case "edit":
             number = int(input("Number of the todo to edit: "))
+            # we need to subtract 1 from number so the index is correct
             number = number - 1
             new_todo = input("Enter new todo: ")
+            # update the todo by overwriting the todo at that index
             todos[number] = new_todo
 
         case "exit":
