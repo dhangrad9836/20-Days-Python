@@ -18,8 +18,9 @@ while True:
             file = open("todos.txt", "r")  # r is for read the file contents
 
             # create a new variable called todos which will store the list of todos
-            # now we do a readlines to read the contents of the file and store it as a list inside the todos variable which is defined here todos
+            # now we do a readlines to read the contents line by line hence readlines() of the file and store it as a list inside the todos variable which is defined here todos
             todos = file.readlines()
+            file.close()  # close the file after reading it
 
             # now append the user input to the list todos
             todos.append(todo)
@@ -27,9 +28,15 @@ while True:
             # create a new file called file, open the txt file and label is as w for write which will overwrite the existing file
             file = open("todos.txt", "w")
 
-            # here we will write the list of the new todos to the file with the old conents and the new todo added
+            # here we will write the list of the new todos with writelines()  to the file with the old conents and the new todo added
             file.writelines(todos)
+            file.close()  # close the file after writing to it
         case "show":
+            # open the 'todos.txt' file in read mode
+            file = open("todos.txt", "r")
+            # store the contents of the todos.txt file in the todos variable as a list using readlines()
+            todos = file.readlines()
+            file.close()
             # the enumerate function gives us both the index and the item in the list
             for index, item in enumerate(todos):
                 item = item.title()
