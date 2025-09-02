@@ -20,7 +20,17 @@ for index, item in enumerate(waiting_list):
 #     print(f"{i}.{j}")
 
 
-menu = ["pasta", "pizza", "salad"]
+# menu = ["pasta", "pizza", "salad"]
 
-for i, j in enumerate(menu):
-    print(f"{i}.{j}")
+# for i, j in enumerate(menu):
+#     print(f"{i}.{j}")
+
+
+buttons = [("John", "Sen", "Morro"), ("Lin", "Ajay", "Filip")]
+for first, second, third in buttons:
+    print(first, second, third)
+
+the_list = [1,3,4]
+
+for index, item in enumerate(the_list):
+    print(index+1, item)

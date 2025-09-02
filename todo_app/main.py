@@ -1,6 +1,6 @@
 # the text inside parentheses is called the arguement
 # list we are storing todos in
-todos = []
+# todos = []
 
 # while statement to repeat question
 while True:
@@ -11,14 +11,30 @@ while True:
 
     match user_action:
         case "add":
-            todo = input("Enter a todo: ")
+            # user input for stored in variable todo
+            todo = input("Enter a todo: ") + "\n"
+
+            # read in the text file and store the current contents
+            file = open("todos.txt", "r")  # r is for read the file contents
+
+            # create a new variable called todos which will store the list of todos
+            # now we do a readlines to read the contents of the file and store it as a list inside the todos variable which is defined here todos
+            todos = file.readlines()
+
+            # now append the user input to the list todos
             todos.append(todo)
+
+            # create a new file called file, open the txt file and label is as w for write which will overwrite the existing file
+            file = open("todos.txt", "w")
+
+            # here we will write the list of the new todos to the file with the old conents and the new todo added
+            file.writelines(todos)
         case "show":
             # the enumerate function gives us both the index and the item in the list
             for index, item in enumerate(todos):
                 item = item.title()
                 index = index + 1  # to start the index at 1 instead of 0
-                # print(index, " ", item)
+                # print(index, " ", item) this will print a number for each item todo
                 print(f"{index}-{item}")
         case "edit":
             number = int(input("Number of the todo to edit: "))

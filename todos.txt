@@ -1,0 +1,5 @@
+prepare
+shower
+shop
+vacum
+cook
