@@ -14,4 +14,3 @@ for country_file in countries:
     file = open(f"{country_file}.txt", "w")
     file.write(country_file)
     file.close()  # closing the file after writing to it is important or it will read errors.
-    print()
